@@ -1,0 +1,11 @@
+#login-form {
+    max-width: 200px;
+}
+
+#login-form input {
+    margin: 5px;
+}
+
+.flash-message {
+    color: red;
+}

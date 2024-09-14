@@ -1,0 +1,12 @@
+.create-task {
+    max-width: 300px;
+}
+
+#form-create-task input, textarea {
+    width: 100%;
+    margin: 15px;
+}
+
+.message {
+    color: red;
+}

@@ -1,0 +1,15 @@
+.all-tasks {
+    margin: 10px;
+    max-width: 300px;
+}
+
+.task {
+    border: 1px solid grey;
+    text-align: left;
+    padding: 5px;
+    margin: 7px;
+}
+
+.control-task {
+    margin-top: 5px;
+}

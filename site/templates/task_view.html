@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block styles %}<link rel="stylesheet" href="/static/css/task_view.css">{% endblock %}
+{% block title %}Task{% endblock %}
+{% block scripts %}<script src="/static/js/action_task.js"></script>{% endblock %}
+{% block content %}
+<center>
+    {% if task %}
+    <div class="task-info">
+        <h1>{{ task.title }}</h1>
+        <small>{{ task.date }}</small>
+        <p>{% if task.description %}{{ task.description }}{% else %}{% endif %}</p>
+        <div class="control-task">
+            <a href="/task/complete/{{ task.id }}">Complete</a>
+            <a href="/task/delete/{{ task.id }}">Delete</a>
+        </div>
+    </div>
+    {% else %}
+    <div class="messages">
+        {% for message in get_flashed_messages() %}
+        <p class="message">{{ message }}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <a href="/tasks">&lt;&lt;&lt; Back</a>
+</center>
+{% endblock %}

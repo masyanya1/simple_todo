@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block styles %}<link rel="stylesheet" href="/static/css/tasks_view.css">{% endblock %}
+{% block title %}all tasks{% endblock %}
+{% block content %}
+<center>
+    <h1>All you tasks</h1>
+    <hr>
+    <div class="all-tasks">
+        {% for task in tasks %}
+        <div class="task" id="{{ task.id }}">
+            <a href="/task/{{ task.id }}"><h2>{{ task.title }}</h2></a>
+            <small>{% if task.date %}{{ task.date }}{% else %}not date{% endif %}</small>
+            <p>{{ task.description }}</p>
+            <div class="control-task">
+                <a href="/task/complete/{{ task.id }}">Complete</a>
+                <a href="/task/delete/{{ task.id }}">Delete</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <a href="/task/create">Create new task</a>
+</center>
+{% endblock %}
